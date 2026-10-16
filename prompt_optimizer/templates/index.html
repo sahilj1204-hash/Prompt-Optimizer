@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Promptly | Prompt Optimizer</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        Promptly<span>.</span>
+    </div>
+
+    <nav>
+        <a href="#optimizer">Optimizer</a>
+        <a href="#how">How It Works</a>
+        <a href="#components">Components</a>
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            ✦ AI Prompt Optimization
+        </div>
+
+        <h1>
+            Turn simple ideas into
+            <span>powerful prompts.</span>
+        </h1>
+
+        <p>
+            Improve your prompts using structured analysis,
+            clarity checks, context, formatting and constraints.
+        </p>
+
+        <a href="#optimizer" class="hero-button">
+            Start Optimizing →
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="optimizer-section" id="optimizer">
+
+    <div class="section-heading">
+
+        <p class="small-title">PROMPT OPTIMIZER</p>
+
+        <h2>Improve your prompt</h2>
+
+        <p>
+            Enter a simple prompt and let the system analyze
+            and improve it.
+        </p>
+
+    </div>
+
+
+    <div class="optimizer-card">
+
+        <label for="promptInput">
+            Your Prompt
+        </label>
+
+        <textarea
+            id="promptInput"
+            placeholder="Example: Explain machine learning..."
+        ></textarea>
+
+        <div class="input-bottom">
+
+            <span id="charCount">
+                0 characters
+            </span>
+
+            <button id="optimizeBtn">
+                Optimize Prompt ✨
+            </button>
+
+        </div>
+
+
+        <div class="samples">
+
+            <span>Try an example:</span>
+
+            <button class="sample"
+                    data-prompt="Explain artificial intelligence">
+                AI
+            </button>
+
+            <button class="sample"
+                    data-prompt="Write an email to my professor">
+                Email
+            </button>
+
+            <button class="sample"
+                    data-prompt="Create a Python program for student marks">
+                Python
+            </button>
+
+            <button class="sample"
+                    data-prompt="Create a study plan for exams">
+                Study Plan
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div id="loading" class="loading">
+        Optimizing your prompt...
+    </div>
+
+
+    <div id="results" class="results">
+
+        <div class="result-top">
+
+            <div class="score-card">
+
+                <div class="score-circle">
+                    <span id="score">0</span>
+                    <small>/100</small>
+                </div>
+
+                <div>
+                    <h3 id="level">Prompt Quality</h3>
+                    <p>Overall prompt score</p>
+                </div>
+
+            </div>
+
+
+            <div class="missing-card">
+
+                <h3>Missing Components</h3>
+
+                <div id="missing">
+                    None
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="prompt-results">
+
+            <div class="prompt-box">
+
+                <div class="box-header">
+                    <h3>Original Prompt</h3>
+                </div>
+
+                <p id="originalPrompt"></p>
+
+                <span id="beforeWords">
+                    0 words
+                </span>
+
+            </div>
+
+
+            <div class="arrow">
+                →
+            </div>
+
+
+            <div class="prompt-box optimized">
+
+                <div class="box-header">
+
+                    <h3>Optimized Prompt</h3>
+
+                    <button id="copyBtn">
+                        Copy
+                    </button>
+
+                </div>
+
+                <p id="optimizedPrompt"></p>
+
+                <span id="afterWords">
+                    0 words
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="how-section" id="how">
+
+    <div class="section-heading">
+
+        <p class="small-title">PROCESS</p>
+
+        <h2>How it works</h2>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>Enter</h3>
+
+            <p>
+                Write your prompt in simple language.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>Analyze</h3>
+
+            <p>
+                The system checks important prompt components.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>Optimize</h3>
+
+            <p>
+                Missing elements are automatically added.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="components-section" id="components">
+
+    <div class="section-heading">
+
+        <p class="small-title">FIVE BUILDING BLOCKS</p>
+
+        <h2>What makes a good prompt?</h2>
+
+    </div>
+
+
+    <div class="components">
+
+        <div class="component">
+            <span>01</span>
+            <h3>Role</h3>
+            <p>Defines who the AI should act as.</p>
+        </div>
+
+        <div class="component">
+            <span>02</span>
+            <h3>Context</h3>
+            <p>Provides background and audience information.</p>
+        </div>
+
+        <div class="component">
+            <span>03</span>
+            <h3>Task</h3>
+            <p>Clearly explains what should be done.</p>
+        </div>
+
+        <div class="component">
+            <span>04</span>
+            <h3>Format</h3>
+            <p>Specifies how the answer should look.</p>
+        </div>
+
+        <div class="component">
+            <span>05</span>
+            <h3>Constraints</h3>
+            <p>Adds limits, requirements and focus.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-logo">
+        Promptly<span>.</span>
+    </div>
+
+    <p>
+        AI Prompt Optimization Mini Project
+    </p>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
